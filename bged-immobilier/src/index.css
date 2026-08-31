@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply font-body text-ink bg-sand antialiased;
+}
+
+h1, h2, h3 {
+  @apply font-display;
+}
+
+::selection {
+  @apply bg-clay/30 text-ink;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 font-medium tracking-tight transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+.btn-primary {
+  @apply btn bg-lagoon text-white shadow-sm hover:bg-lagoon-light hover:shadow-md hover:-translate-y-0.5;
+}
+.btn-gold {
+  @apply btn bg-clay text-white shadow-sm hover:bg-clay-light hover:shadow-md hover:-translate-y-0.5;
+}
+.btn-outline {
+  @apply btn border-2 border-lagoon text-lagoon hover:bg-lagoon hover:text-white;
+}
+.input {
+  @apply w-full rounded-xl border border-ink/10 bg-white px-3.5 py-2.5 text-sm text-ink placeholder:text-ink/35 transition focus:outline-none focus:ring-2 focus:ring-clay/50 focus:border-clay;
+}
+.label {
+  @apply block text-xs font-semibold uppercase tracking-wide text-lagoon/70 mb-1.5;
+}
+.card {
+  @apply bg-white rounded-2xl shadow-[0_1px_2px_rgba(8,47,48,0.06),0_8px_24px_-12px_rgba(8,47,48,0.15)] border border-ink/5;
+}
+
+/* --- Signature : étiquette de loyer façon "ticket" --- */
+.price-tag {
+  @apply relative inline-flex items-baseline gap-1 rounded-lg bg-lagoon-deep/5 px-3 py-1.5 font-mono text-clay;
+}
+.price-tag::before,
+.price-tag::after {
+  content: "";
+  @apply absolute top-1/2 -translate-y-1/2 h-3 w-3 rounded-full bg-sand;
+}
+.price-tag::before { left: -6px; }
+.price-tag::after { right: -6px; }
+
+.eyebrow {
+  @apply font-mono text-xs uppercase tracking-[0.18em] text-clay;
+}
